@@ -1,0 +1,14 @@
+@use 'variaveis' as variavel;
+
+@mixin text($fontsize: 1em, $color: variavel.$corTextoPrincipal) {
+    font-size: $fontsize;
+    line-height: 1.4em;
+    color: $color;
+}
+
+@mixin title($fontSize: 2.8em, $color: variavel.$corTitulo) {
+    font-size: $fontSize;
+    line-height: 1.2em;
+    font-weight: 700;
+    color: $color;
+}

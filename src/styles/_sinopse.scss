@@ -1,0 +1,60 @@
+@use 'mixins' as mixins;
+@use 'variaveis' as variavel;
+
+.sinopse {
+    display: flex;
+    margin-bottom: 50px;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(to top, variavel.$corDeFundo, variavel.$corDeFundoSecundario);
+
+
+    &__image img {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        box-shadow: 5px 7px 54px rgba(255, 240, 0, 0.5)
+    }
+
+    &__descricao {
+        flex: 1;
+        max-width: 600px;
+
+        h2 {
+            padding-bottom: 30px;
+        }
+
+        .text {
+            @include mixins.text(1.3em, )
+        }
+    }
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: auto; // Permite ajuste dinâmico de altura no mobile
+    
+        &__image img {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    
+        &__descricao {
+            max-width: 100%;
+            text-align: center;
+            padding: 10px;
+    
+            h2 {
+                font-size: 1.8rem;
+                margin-left: -20px;
+            }
+    
+            .text {
+                @include mixins.text(1rem);
+            }
+        }
+    }
+}

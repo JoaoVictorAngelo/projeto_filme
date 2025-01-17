@@ -1,5 +1,44 @@
-$bgColor: rgb(197, 234, 255);
+@use 'variaveis' as variavel;
+@use 'mixins' as mixins;
+@use 'hero';
+@use 'sinopse';
+@use 'trailer';
+@use 'cta';
+@use 'footer';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, Helvetica, Arial, sans-serif;
+}
 
 body {
-    background-color: $bgColor;
+    background-color: variavel.$corDeFundo;
 }
+
+.text {
+    @include mixins.text;
+}
+
+.text--secundario {
+    @include mixins.text(1em, variavel.$corTextoSecundario)
+}
+
+.title {
+    @include mixins.title
+}
+
+.title--secundario {
+    @include mixins.title(2.8em, variavel.$corTituloSecundario)
+}
+
+.container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: red;
+}
+
+

@@ -1,0 +1,19 @@
+@use'variaveis' as variavel;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: linear-gradient(variavel.$corDeFundo,variavel.$corDeFundoSecundario, #4a4a8c);
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+    &__text {
+        margin: 0;
+        line-height: 1.5;
+        padding: 0 20px;
+    }
+}

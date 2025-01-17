@@ -1,0 +1,88 @@
+@use 'variaveis' as variavel;
+
+.trailer {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to bottom, variavel.$corDeFundo, variavel.$corDeFundoAlternativo, variavel.$corDeFundoSecundario);
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        &__button {
+            margin: 0 1vw;
+            font-size: 20px;
+            color: variavel.$corBotao;
+            background: none;
+            border: none;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 5px solid transparent;
+
+            &--is-active {
+                border-bottom: 5px solid variavel.$corDeFundoSecundario;
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        &--is-active{
+            display: grid;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            
+            img {
+                width: 470px;
+                max-width: 100%;
+                box-shadow: 5px 7px 54px rgba(255,240,0,0.5)
+            }
+
+            iframe {
+                width: 70%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+                display: block;
+                box-shadow: 5px 7px 54px rgba(255,240,0,0.5)
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .trailer {
+        padding: 10px;
+
+        &__tabs {
+            flex-direction: column;
+
+            &__button {
+                font-size: 14px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+
+        &__list {
+            grid-template-columns: 1fr; /* Apenas um item por linha */
+            gap: 12px;
+
+            &__item {
+                img, iframe {
+                    width: 100%; /* Adapta para toda a largura do container */
+                    max-width: none; /* Remove limite de largura */
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@use 'variaveis' as variavel;
+
+.cta {
+    background: linear-gradient(to bottom, variavel.$corDeFundoSecundario, #D99EAA, variavel.$corDeFundo);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background-color: #EF4D7A;
+        color: rgba(255, 255, 255, 0.808);
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #e03d69;
+            color: white;
+        }
+    }
+}
